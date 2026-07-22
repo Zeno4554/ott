@@ -10,6 +10,8 @@ import authRoutes from './routes/authRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import genreRoutes from "./routes/genreRoutes.js";
 import movieRoutes from "./routes/movieRoutes.js";
+import mediaRoutes from "./routes/mediaRoutes.js";
+
 
 const app = express();
 
@@ -34,6 +36,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use("/api/genres", genreRoutes);
 app.use("/api/movies", movieRoutes);
+app.use("/api/media", mediaRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
