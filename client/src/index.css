@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-ink-950 text-bone-100 font-body antialiased;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-marquee-gold;
+  }
+}
+
+@layer components {
+  /* Signature element: a film-strip sprocket divider, used under auth card
+     headings to tie the "marquee/cinema" theme to real texture rather than
+     a decorative rule. */
+  .sprocket-strip {
+    @apply flex items-center justify-center gap-3 py-2;
+  }
+  .sprocket-strip span {
+    @apply block h-2 w-2 rounded-[2px] bg-ink-600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
