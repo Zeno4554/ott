@@ -9,6 +9,7 @@ import { errorHandler, notFoundHandler } from './middlewares/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import genreRoutes from "./routes/genreRoutes.js";
+import movieRoutes from "./routes/movieRoutes.js";
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use("/api/genres", genreRoutes);
+app.use("/api/movies", movieRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
